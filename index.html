@@ -67,12 +67,32 @@ button{
 
 <body>
 
-<!-- tombol musik -->
-<button onclick="playMusic()">💖 Klik Aku 💖</button>
+<button onclick="playMusic()" style="
+position:relative;
+z-index:10;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:pink;
+font-size:16px;
+">
+💖 Klik Aku 💖
+</button>
 
-<audio id="musik" loop>
+<audio id="musik">
   <source src="lagu.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+function playMusic(){
+  let audio = document.getElementById("musik");
+  audio.play().then(()=>{
+    console.log("musik jalan");
+  }).catch(err=>{
+    alert("klik lagi ya 😭");
+  });
+}
+</script>
 
 <!-- SLIDES -->
 
